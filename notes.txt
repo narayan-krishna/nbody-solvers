@@ -1,0 +1,20 @@
+n-body solver: planet/star motion
+
+- prompt: simulate the positions and velocities of a collection of interacting bodies
+
+inputs: mass, position, and velocity of particles
+outputs: position and velocity of particles at specified time-steps
+
+particle id -> int
+  (particle id will be used to index vectors)
+
+mass -> vector (m)
+position -> vector(x, y)
+velocity -> vector(x, y)
+force -> vector(x, y)
+
+- force on a particle is the sum of the forces from other particles onto said particle
+- f=ma
+- solver for acceleration
+- use differentiation to solve for position, velocity
+
