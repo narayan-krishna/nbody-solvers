@@ -48,7 +48,6 @@ class GravSolver {
     inline void compute_position (int particle_id);
     inline void compute_velocity (int particle_id);
 
-    void buffer_to_state();
     const void render_state();
 
   public:

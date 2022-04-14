@@ -85,9 +85,6 @@ void GravSolver::solve(){
       compute_position(j);
       compute_velocity(j);
     }
-
-    //swap buffer computes to state
-    buffer_to_state();
   }
 
   // render final timestep
@@ -96,7 +93,9 @@ void GravSolver::solve(){
 }
 
 // calculate the force of particle id in the x direction and they y direction
-// i.e. Fx = 3, Fy = 4 means that particle_id is being pushed 3 to right, 4 left
+// NOTE: i.e. Fx = 3, Fy = 4 means that particle_id is being pushed 3 to right, 4 left
+// PERF: this more force values than neccessary (newton's third law)
+
 inline void GravSolver::compute_total_force_full(int particle_id) {
   // printing::marker("force");
   for (size_t k = 0; k < particle_count; k ++) {
@@ -114,10 +113,12 @@ inline void GravSolver::compute_total_force_full(int particle_id) {
   }
 }
 
+// TODO: implement computation of force
 inline void GravSolver::compute_total_force_perf(int particle_id) {
   //for 
 }
 
+// TODO: implement acceleration computation
 inline void GravSolver::compute_acceleration (int particle_id) {
 }
 
@@ -128,10 +129,6 @@ inline void GravSolver::compute_position (int particle_id) {
 inline void GravSolver::compute_velocity (int particle_id) {
 }
 
-void GravSolver::buffer_to_state() {
-}
-
 const void GravSolver::render_state() {
   // print state to output
-
 }
