@@ -8,10 +8,11 @@ outputs: position and velocity of particles at specified time-steps
 particle id -> int
   (particle id will be used to index vectors)
 
-mass -> vector (m)
-position -> vector(x, y)
-velocity -> vector(x, y)
-force -> vector(x, y)
+mass(m) -> mass of particle[i]
+position(x,y) -> x, y coordinates of particle
+velocity(x,y) -> velocity 
+
+force(x,y) -> force onto a particle[i] in the x direction, y direction
 
 - force on a particle is the sum of the forces from other particles onto said particle
 - f=ma

@@ -4,11 +4,22 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <string>
 
 namespace printing {
 
   template <class T>
-  const void std_print(const std::vector<T> &vec) {
+  inline const void marker(const T note) {
+    std::cout << "reached ->" << note << std::endl;
+  }
+
+  template <class T>
+  inline const void eval(const std::string label, const T val) {
+    std::cout << label << " ->" << val << std::endl;
+  }
+
+  template <class T>
+  inline const void std_print(const std::vector<T> &vec) {
     for(auto i : vec) {
       std::cout << i << " ";
     }
@@ -17,7 +28,7 @@ namespace printing {
 
   //print 2d vectors
   template <class T>
-  const void std_print(const std::vector<std::vector<T>> &vec) {
+  inline const void std_print(const std::vector<std::vector<T>> &vec) {
     for (auto sub_vec : vec) {
       for (auto i : sub_vec) {
         std::cout << i << " ";
@@ -27,7 +38,7 @@ namespace printing {
   }
 
   template <class K, class V>
-  const void std_print(const std::unordered_map<K,V> &map) {
+  inline const void std_print(const std::unordered_map<K,V> &map) {
     for (auto i : map) {
       std::cout << i->first << ", " << i->second << std::endl;
     }

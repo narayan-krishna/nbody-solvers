@@ -22,11 +22,11 @@ int main (int argc, char **argv) {
   }
 
   // test printing
-  std::vector<int> x{1,2,3};
-  printing::std_print(x);
-
-  std::vector<std::vector<int>> y{{1,2}, {1,2}, {1,3}};
-  printing::std_print(y);
+  // std::vector<int> x{1,2,3};
+  // printing::std_print(x);
+  //
+  // std::vector<std::vector<int>> y{{1,2}, {1,2}, {1,3}};
+  // printing::std_print(y);
 
   std::string file_path = argv[1];
   int total_timesteps = std::stoi(argv[2]);
@@ -35,6 +35,7 @@ int main (int argc, char **argv) {
   std::cout << "total timesteps is: " << total_timesteps << std::endl;
 
   GravSolver s(file_path, total_timesteps);
+  s.solve();
 
   return 0;
 }
